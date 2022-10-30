@@ -11,6 +11,7 @@ class ContactsRepository {
     );
     return rows;
   }
+
   async findById(id) {
     const [row] = await db.query(
       `

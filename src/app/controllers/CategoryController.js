@@ -3,12 +3,13 @@ import CategoriesRepository from "../repositories/CategoryRepository.js";
 class CategoryController {
   async index(req, res) {
     const { orderBy } = req.query;
-    const contacts = await CategoriesRepository.findAll(orderBy);
-    res.status(200).json(contacts);
+    const categories = await CategoriesRepository.findAll(orderBy);
+    res.status(200).json(categories);
   }
 
   async show(req, res) {
     const { id } = req.params;
+
     const category = await CategoriesRepository.findById(id);
 
     if (!category) {
